@@ -1,51 +1,19 @@
 <?php
 
-class Genre{
-    private $genre1;
-    private $genre2;
 
-    function __construc($_genre1, $_genre2 = null){
-        $this->setGenre1($_genre1);
-        if($_genre2){
-            $this->setGenre2($_genre2);
-        }
+class Genre {
+    private $name;
+
+    public function construct($_name) {
+        $this->setName($_name);
     }
 
-     /**
-     * Set the value of genre1
-     *
-     * @return  self
-     */ 
-    public function setGenre1($genre1){
-        $this->genre1 = $genre1;
-
-        return $this;
+    public function setName($_name) {
+        $this->name = $_name;
     }
-    /**
-     * Get the value of genre1
-     */ 
-    public function getGenre1(){
-        return $this->genre1;
-    }
-
-    // ------
-
-    /**
-     * Set the value of genre2
-     *
-     * @return  self
-     */ 
-    public function setGenre2($genre2){
-        $this->genre2 = $genre2;
-
-        return $this;
-    }
-    /**
-     * Get the value of genre2
-     */ 
-    public function getGenre2(){
-        return $this->genre2;
-    }
-
-   
 }
+
+$genre1 = new Genre('Drammatico');
+$genre2 = new Genre('Comico');
+
+$film1 = new Movie('Salvate il soldato Ryan', 'Un film di guerra', 2001, [$genre1,$genre2]);

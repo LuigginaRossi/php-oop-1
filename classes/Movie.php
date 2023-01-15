@@ -7,7 +7,7 @@ class Movie{
     private $title;
     private $subtitle;
     private $year;
-
+    private $genres;
     function __construct($_title, $_subtitle = null, $_year){
         $this->setTitle($_title);
 
